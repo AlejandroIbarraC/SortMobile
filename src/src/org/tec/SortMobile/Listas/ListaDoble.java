@@ -1,6 +1,7 @@
 package org.tec.SortMobile.Listas;
 
 public class ListaDoble extends Lista {
+
     public void add(int valor) {
         if (listaVacia()) {
             this.head = new Nodo(valor);
@@ -40,15 +41,15 @@ public class ListaDoble extends Lista {
 
     public static void main(String[] args) {
         ListaDoble lista = new ListaDoble();
-        lista.add(12);
-        lista.add(13);
-        lista.add(14);
+        lista.add(10);
+        lista.add(9);
+        lista.add(100);
+        lista.add(1);
         lista.add(16);
-        lista.add(17);
-        lista.add(18);
+        lista.add(137);
+        lista.add(2);
         lista.print();
-        lista.add(15, 2);
+        lista.selectionSort();
         lista.print();
-        System.out.println(lista.getValue(4));
     }
 }

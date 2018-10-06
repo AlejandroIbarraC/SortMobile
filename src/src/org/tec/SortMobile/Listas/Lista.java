@@ -1,6 +1,7 @@
 package org.tec.SortMobile.Listas;
 
 public class Lista {
+
     int largo;
     Nodo head;
 
