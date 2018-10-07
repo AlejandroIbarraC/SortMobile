@@ -22,6 +22,23 @@ public class Lista {
         }
     }
 
+    public void insertionSort(){
+        if (!listaVacia()){
+            int in;
+            int out;
+            for(out = 1; out < this.largo; out++){
+                int temp = this.getValue(out);
+                in = out;
+                while(in >= 0 && this.getValue(in-1) >= temp){
+                    this.swap(in, in-1);
+                    in --;
+                }
+                 this.setValue(in, temp);
+            }
+
+        }
+    }
+
     public void swap(int minIndex, int i) {
         int temp = this.getValue(minIndex);
         this.setValue(minIndex, this.getValue(i));

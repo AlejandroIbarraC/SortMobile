@@ -49,7 +49,7 @@ public class ListaDoble extends Lista {
         lista.add(137);
         lista.add(2);
         lista.print();
-        lista.selectionSort();
+        lista.insertionSort();
         lista.print();
     }
 }

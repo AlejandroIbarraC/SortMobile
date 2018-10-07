@@ -27,7 +27,7 @@ public class ListaSimple extends Lista {
         lista.add(100);
         lista.add(17);
         lista.print();
-        lista.selectionSort();
+        lista.insertionSort();
         lista.print();
     }
 }
