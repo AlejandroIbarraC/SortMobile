@@ -1,9 +1,9 @@
-package org.tec.SortMobile.Listas;
+package tec.org.tec.lists;
 
 public class Lista {
 
-    int largo;
-    Nodo head;
+    public int largo;
+    public Nodo head;
 
     public Lista() {
         this.head = null;
@@ -18,6 +18,7 @@ public class Lista {
                     if (this.getValue(j) < this.getValue(minIndex))
                         minIndex = j;
                 swap(minIndex, a);
+                System.out.println(this.print());
             }
         }
     }
@@ -45,12 +46,27 @@ public class Lista {
         this.setValue(i, temp);
     }
 
-    public void print() {
+    public int getLargo() {
+        return largo;
+    }
+
+    public void setLargo(int largo) {
+        this.largo = largo;
+    }
+
+    public String print() {
         if (!listaVacia()) {
-            for (int a = 0; a < this.largo; a++) {
-                System.out.println(getValue(a));
+            String txt = "[";
+            Nodo tmp = this.head;
+            while (tmp.next != null){
+                txt += Integer.toString(tmp.valor) + ", ";
+                tmp = tmp.next;
             }
-            System.out.println("--------------------------");
+            txt += Integer.toString(tmp.valor) + "]";
+            return txt;
+        }
+        else{
+            return null;
         }
     }
 
@@ -86,4 +102,13 @@ public class Lista {
             return false;
         }
     }
+
+    public static void main(String args[]){
+        ListaSimple l = new ListaSimple();
+        l.anadirElementosAlAzar();
+        System.out.println(l.print());
+        l.selectionSort();
+        System.out.println(l.print());
+    }
+
 }

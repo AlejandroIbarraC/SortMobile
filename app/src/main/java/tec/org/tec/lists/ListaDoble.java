@@ -1,4 +1,4 @@
-package org.tec.SortMobile.Listas;
+package tec.org.tec.lists;
 
 public class ListaDoble extends Lista {
 
@@ -37,19 +37,5 @@ public class ListaDoble extends Lista {
             tmp.next = nuevo;
             this.largo++;
         }
-    }
-
-    public static void main(String[] args) {
-        ListaDoble lista = new ListaDoble();
-        lista.add(10);
-        lista.add(9);
-        lista.add(100);
-        lista.add(1);
-        lista.add(16);
-        lista.add(137);
-        lista.add(2);
-        lista.print();
-        lista.insertionSort();
-        lista.print();
     }
 }

@@ -1,4 +1,4 @@
-package org.tec.SortMobile.Listas;
+package tec.org.tec.lists;
 
 public class Nodo {
     Nodo next;

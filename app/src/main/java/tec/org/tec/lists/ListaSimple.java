@@ -1,4 +1,6 @@
-package org.tec.SortMobile.Listas;
+package tec.org.tec.lists;
+
+import java.util.Random;
 
 public class ListaSimple extends Lista {
 
@@ -19,15 +21,14 @@ public class ListaSimple extends Lista {
         }
     }
 
-    public static void main(String[] args){
-        ListaSimple lista = new ListaSimple();
-        lista.add(12);
-        lista.add(14);
-        lista.add(9);
-        lista.add(100);
-        lista.add(17);
-        lista.print();
-        lista.insertionSort();
-        lista.print();
+    public void anadirElementosAlAzar(){
+        Random rand = new Random();
+        int ran;
+        int i = 0;
+        while (i != 8){
+            ran = rand.nextInt(501);
+            this.add(ran);
+            i++;
+        }
     }
 }
