@@ -3,4 +3,6 @@
     <string name="selection_sort">Selection Sort</string>
     <string name="error">Hubo un error xD</string>
     <string name="insertion_sort">Insertion Sort</string>
+    <string name="s_s">S.S.</string>
+    <string name="generar_lista">generar lista</string>
 </resources>
