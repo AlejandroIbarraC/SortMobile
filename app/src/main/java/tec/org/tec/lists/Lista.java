@@ -10,23 +10,29 @@ public class Lista {
         this.largo = 0;
     }
 
-    public void selectionSort() {
-        if (!listaVacia()) {
+    public String selectionSort(){
+        if (!this.listaVacia()) {
+            String txt = "";
             for (int a = 0; a < this.largo - 1; a++) {
                 int minIndex = a;
                 for (int j = a + 1; j < this.largo; j++)
                     if (this.getValue(j) < this.getValue(minIndex))
                         minIndex = j;
-                swap(minIndex, a);
-                System.out.println(this.print());
+                this.swap(minIndex, a);
+                txt += this.print() + "\n";
             }
+            return txt;
+        }
+        else{
+            return null;
         }
     }
 
-    public void insertionSort(){
+    public String insertionSort(){
         if (!listaVacia()){
             int in;
             int out;
+            String txt = "";
             for(out = 1; out < this.largo; out++){
                 int temp = this.getValue(out);
                 in = out;
@@ -34,9 +40,14 @@ public class Lista {
                     this.swap(in, in-1);
                     in --;
                 }
-                 this.setValue(in, temp);
+                this.setValue(in, temp);
+                txt += this.print() + "\n";
             }
+            return txt;
 
+        }
+        else{
+            return null;
         }
     }
 
@@ -101,14 +112,6 @@ public class Lista {
         } else {
             return false;
         }
-    }
-
-    public static void main(String args[]){
-        ListaSimple l = new ListaSimple();
-        l.anadirElementosAlAzar();
-        System.out.println(l.print());
-        l.selectionSort();
-        System.out.println(l.print());
     }
 
 }
