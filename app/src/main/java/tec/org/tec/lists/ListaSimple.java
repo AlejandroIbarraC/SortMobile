@@ -21,12 +21,12 @@ public class ListaSimple extends Lista {
         }
     }
 
-    public void anadirElementosAlAzar(){
+    public void anadirElementosAlAzar(int num){
         Random rand = new Random();
         int ran;
         int i = 0;
-        while (i != 8){
-            ran = rand.nextInt(501);
+        while (i != num){
+            ran = rand.nextInt(1001);
             this.add(ran);
             i++;
         }

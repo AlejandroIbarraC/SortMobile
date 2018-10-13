@@ -10,29 +10,22 @@ public class Lista {
         this.largo = 0;
     }
 
-    public String selectionSort(){
+    public void selectionSort(){
         if (!this.listaVacia()) {
-            String txt = "";
             for (int a = 0; a < this.largo - 1; a++) {
                 int minIndex = a;
                 for (int j = a + 1; j < this.largo; j++)
                     if (this.getValue(j) < this.getValue(minIndex))
                         minIndex = j;
                 this.swap(minIndex, a);
-                txt += this.print() + "\n";
             }
-            return txt;
-        }
-        else{
-            return null;
         }
     }
 
-    public String insertionSort(){
+    public void insertionSort(){
         if (!listaVacia()){
             int in;
             int out;
-            String txt = "";
             for(out = 1; out < this.largo; out++){
                 int temp = this.getValue(out);
                 in = out;
@@ -41,13 +34,7 @@ public class Lista {
                     in --;
                 }
                 this.setValue(in, temp);
-                txt += this.print() + "\n";
             }
-            return txt;
-
-        }
-        else{
-            return null;
         }
     }
 

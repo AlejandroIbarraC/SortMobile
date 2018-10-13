@@ -16,41 +16,68 @@ public class SelectionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selection);
-        widget = findViewById(R.id.button2);
-        widget.setEnabled(false);
     }
 
     public void generarListaS(View v){
-        listaSelection.anadirElementosAlAzar();
-        String txt = listaSelection.print();
+        int i = 0;
+        String txt = "";
+        int tInicio = 0;
+        int tFinal = 0;
+        int tDurado = 0;
+        int num = 0;
+        while (i != 11){
+            if (i == 0){
+                listaSelection.anadirElementosAlAzar(5);
+                num = 5;
+            }if (i == 1){
+                listaSelection.anadirElementosAlAzar(10);
+                num = 10;
+            }if (i == 2){
+                listaSelection.anadirElementosAlAzar(20);
+                num = 20;
+            }if (i == 3){
+                listaSelection.anadirElementosAlAzar(30);
+                num = 30;
+            }if (i == 4){
+                listaSelection.anadirElementosAlAzar(40);
+                num = 40;
+            }if (i == 5){
+                listaSelection.anadirElementosAlAzar(50);
+                num = 50;
+            }if (i == 6){
+                listaSelection.anadirElementosAlAzar(60);
+                num = 60;
+            }if (i == 7){
+                listaSelection.anadirElementosAlAzar(70);
+                num = 70;
+            }if (i == 8){
+                listaSelection.anadirElementosAlAzar(80);
+                num = 80;
+            }if (i == 9){
+                listaSelection.anadirElementosAlAzar(90);
+                num = 90;
+            }if (i == 10){
+                listaSelection.anadirElementosAlAzar(100);
+                num = 100;
+            }
+            tInicio = (int) System.currentTimeMillis();
+            listaSelection.selectionSort();
+            tFinal = (int) System.currentTimeMillis();
+            tDurado = tFinal - tInicio;
+            txt += "Largo de la lista: " + num + ", tiempo durado ordenando: " + tDurado + " ms." + "\n" + "\n";
+            i++;
+        }
         widget = findViewById(R.id.textView2);
         widget.setText(txt);
-        widget = findViewById(R.id.button);
-        widget.setEnabled(false);
-        widget = findViewById(R.id.button2);
-        widget.setEnabled(true);
-    }
-    public void ordenarSelection(View v){
-        int tInicio = (int) System.currentTimeMillis();
-        widget = findViewById(R.id.button2);
-        widget.setEnabled(false);
-        String txt = listaSelection.selectionSort();
-        int tFinal = (int) System.currentTimeMillis();
-        widget = findViewById(R.id.textView17);
-        widget.setText(txt);
-        widget = findViewById(R.id.button);
-        widget.setEnabled(true);
         listaSelection = new ListaSimple();
-        widget = findViewById(R.id.textView3);
-        txt = "Duración: " +Integer.toString(tFinal - tInicio) + " milisegundos.";
-        widget.setText(txt);
     }
-
 
     public void irInsertion(View v){
+        widget = findViewById(R.id.textView2);
+        widget.setText("");
+        listaSelection = new ListaSimple();
         Intent intent = new Intent(this, Resultados.class);
         startActivity(intent);
-        listaSelection = new ListaSimple();
     }
 
 }
